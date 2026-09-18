@@ -1,7 +1,87 @@
-<!doctype html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Iglesia | Amisadai</title><link rel="stylesheet" href="../style.css"></head><body>
-<header class="nav" id="navbar"><div class="container nav-flex"><div class="logo">AMISADAI<span>.</span></div><nav class="nav-links" id="nav-links"><a href="../">Inicio</a><a href="../iglesia/">Iglesia</a><a href="../jovenes/">Jóvenes</a><a href="../mujeres/">Mujeres</a><a href="../proxima/">Cursos</a><a href="../kids/">Kids</a><a href="../ofrendas/">Ofrendas</a><a href="../contacto/">Contacto</a></nav><button class="menu-btn" id="menu-btn" type="button">MENÚ</button></div></header>
+<!doctype html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Iglesia | Amisadai</title><link rel="stylesheet" href="../style.css">
+<style>
+/* Espacios para fotos: si la imagen no existe, se muestra un recuadro vacío */
+.photo{
+  position:relative;
+  overflow:hidden;
+  border-radius:var(--radius);
+  border:1px solid var(--line);
+  background:#151416;
+}
+.photo img{width:100%;height:auto;display:block}
+.photo.empty{border:1px dashed rgba(214,173,109,.4);aspect-ratio:1}
+.photo.empty img{display:none}
+.photo.empty:after{
+  content:"Espacio para foto";
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--muted);
+  font-size:.9rem;
+}
+
+/* Pastores: foto + texto */
+.pastors{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:center;text-align:left}
+.pastors .photo img{max-height:640px;object-fit:contain}
+.pastors .text{margin:0;max-width:540px}
+
+/* Galería: cada foto se ve completa, con su proporción original */
+.church-gallery{
+  column-count:3;
+  column-gap:14px;
+  margin-top:44px;
+}
+.church-gallery .photo{
+  break-inside:avoid;
+  margin-bottom:14px;
+}
+
+@media(max-width:900px){
+  .pastors{grid-template-columns:1fr;gap:40px}
+  .church-gallery{column-count:2}
+}
+</style>
+</head><body>
+<header class="nav" id="navbar"><div class="container nav-flex"><div class="logo">AMISADAI<span>.</span></div><nav class="nav-links" id="nav-links"><a href="../">Inicio</a><a href="../iglesia/">Iglesia</a><a href="../jovenes/">Jóvenes</a><a href="../mujeres/">Mujeres</a><a href="../cursos/">Cursos</a><a href="../kids/">Kids</a><a href="../ofrendas/">Ofrendas</a><a href="../contacto/">Contacto</a></nav><button class="menu-btn" id="menu-btn" type="button">MENÚ</button></div></header>
+
 <section class="hero" style="min-height:70vh"><div class="container"><div class="hero-content"><div class="eyebrow">Conócenos</div><h1>NUESTRA IGLESIA</h1><p>Una familia para crecer en Dios.</p><a href="../contacto/" class="btn-primary">Quiero ser parte</a></div></div></section>
-<section class="section center"><div class="container"><div class="eyebrow">Liderazgo</div><h2 class="section-title">Nuestros pastores</h2><p class="text">Los pastores <strong>Julio y Laurita de Martinez</strong> lideran con pasión, amor y visión, guiando a la iglesia a vivir una vida transformada por Dios.</p></div></section>
-<section class="section dark-section"><div class="container center"><div class="eyebrow">Conecta</div><h2 class="section-title">Nuestros ministerios</h2><div class="grid-3"><div class="card"><h3>Alabanza</h3><p>Guía a la iglesia a la presencia de Dios a través de la música y adoración.</p></div><div class="grid-3"><div class="card"><h3>Mujeres</h3><p>Reunion de mujeres en donde buscan a Dios y su espiritu.</p></div><div class="card"><h3>Niños</h3><p>Formamos a las nuevas generaciones enseñándoles la palabra de Dios de forma dinámica.</p></div><div class="card"><h3>Jóvenes</h3><p>Un espacio donde los jóvenes encuentran propósito, identidad y comunidad.</p></div><div class="card"><h3>Maestros</h3><p>Personas comprometidas en enseñar la palabra de Dios con excelencia.</p></div><div class="card"><h3>Grupos Pequeñas</h3><p>Grupos en hogares donde crecemos, compartimos y fortalecemos nuestra fe.</p></div><div class="card"><h3>Servicio</h3><p>Equipos que hacen posible cada reunión y evento en la iglesia.</p></div></div></div></section>
-<section class="section center"><div class="container"><div class="eyebrow">Nuestra visión</div><h2 class="section-title">Alcanzar · Restaurar · Formar</h2><p class="text">Alcanzar vidas, restaurar familias y formar discípulos comprometidos con Dios.</p></div></section>
+
+<section class="section"><div class="container pastors">
+<div class="photo"><img src="../img/pastores.jpg" alt="Pastores Julio y Laurita de Martinez" onerror="this.parentElement.classList.add('empty')"></div>
+<div><div class="eyebrow">Liderazgo</div><h2 class="section-title">Nuestros pastores</h2><p class="text">Los pastores <strong>Julio y Laurita de Martinez</strong> lideran con pasión, amor y visión, guiando a la iglesia a vivir una vida transformada por Dios.</p></div>
+</div></section>
+
+
+
+<section class="section center"><div class="container"><div class="eyebrow">Conecta</div><h2 class="section-title">Nuestros ministerios</h2><div class="grid-3">
+<div class="card"><h3>Alabanza</h3><p>Guía a la iglesia a la presencia de Dios a través de la música y adoración.</p></div>
+<div class="card"><h3>Mujeres</h3><p>Reunión de mujeres en donde buscan a Dios y su Espíritu.</p></div>
+<div class="card"><h3>Niños</h3><p>Formamos a las nuevas generaciones enseñándoles la palabra de Dios de forma dinámica.</p></div>
+<div class="card"><h3>Jóvenes</h3><p>Un espacio donde los jóvenes encuentran propósito, identidad y comunidad.</p></div>
+<div class="card"><h3>Maestros</h3><p>Personas comprometidas en enseñar la palabra de Dios con excelencia.</p></div>
+<div class="card"><h3>Grupos Pequeños</h3><p>Grupos en hogares donde crecemos, compartimos y fortalecemos nuestra fe.</p></div>
+<div class="card"><h3>Servicio</h3><p>Equipos que hacen posible cada reunión y evento en la iglesia.</p></div>
+</div></div></section>
+<section class="section dark-section"><div class="container center"><div class="eyebrow">Nuestra casa</div><h2 class="section-title">Así vivimos cada reunión</h2>
+<div class="church-gallery">
+<div class="photo"><img src="../img/ig1.jpg" alt="Reunión en la iglesia Amisadai" onerror="this.parentElement.classList.add('empty')"></div>
+<div class="photo"><img src="../img/ig2.jpg" alt="Iglesia Amisadai" onerror="this.parentElement.classList.add('empty')"></div>
+<div class="photo"><img src="../img/ig3.jpg" alt="Iglesia Amisadai" onerror="this.parentElement.classList.add('empty')"></div>
+<div class="photo"><img src="../img/ig4.jpg" alt="Iglesia Amisadai" onerror="this.parentElement.classList.add('empty')"></div>
+<div class="photo"><img src="../img/ig6.jpg" alt="Iglesia Amisadai" onerror="this.parentElement.classList.add('empty')"></div>
+<div class="photo"><img src="../img/ig7.jpg" alt="Iglesia Amisadai" onerror="this.parentElement.classList.add('empty')"></div>
+<div class="photo"><img src="../img/ig8.jpg" alt="Iglesia Amisadai" onerror="this.parentElement.classList.add('empty')"></div>
+<div class="photo"><img src="../img/ig9.jpg" alt="Iglesia Amisadai" onerror="this.parentElement.classList.add('empty')"></div>
+<div class="photo"><img src="../img/ig10.jpg" alt="Iglesia Amisadai" onerror="this.parentElement.classList.add('empty')"></div>
+<div class="photo"><img src="../img/ig11.jpg" alt="Iglesia Amisadai" onerror="this.parentElement.classList.add('empty')"></div>
+<div class="photo"><img src="../img/ig12.jpg" alt="Iglesia Amisadai" onerror="this.parentElement.classList.add('empty')"></div>
+<div class="photo"><img src="../img/ig13.jpg" alt="Iglesia Amisadai" onerror="this.parentElement.classList.add('empty')"></div>
+<div class="photo"><img src="../img/ig14.jpg" alt="Iglesia Amisadai" onerror="this.parentElement.classList.add('empty')"></div>
+
+</div></div></section>
+
+<section class="section dark-section center"><div class="container"><div class="eyebrow">Nuestra visión</div><h2 class="section-title">Alcanzar · Restaurar · Formar</h2><p class="text">Alcanzar vidas, restaurar familias y formar discípulos comprometidos con Dios.</p></div></section>
+
 <footer><p>© 2026 Iglesia Amisadai</p><p>Minatitlán, Veracruz</p></footer><script src="../script.js"></script></body></html>
