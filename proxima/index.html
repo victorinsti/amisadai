@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Próximamente | Iglesia Amisadai</title>
+
+    <meta name="description" content="Iglesia Amisadai. Muy pronto tendremos algo nuevo para ti.">
+
+    <style>
+        :root {
+            --bg: #0b0a0b;
+            --bg-secondary: #111012;
+            --text: #f6f3f4;
+            --muted: #aaa4a8;
+            --gold: #b78a4a;
+            --gold-light: #d6ad6d;
+            --line: rgba(214, 173, 109, 0.22);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            min-height: 100%;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(183, 138, 74, 0.08),
+                    transparent 45%
+                ),
+                var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+        }
+
+        /* Fondo */
+
+        .background {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .background::before {
+            content: "";
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            border: 1px solid rgba(183, 138, 74, 0.10);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .background::after {
+            content: "";
+            position: absolute;
+            width: 850px;
+            height: 850px;
+            border: 1px solid rgba(183, 138, 74, 0.05);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Contenedor */
+
+        .page {
+            width: 100%;
+            min-height: 100vh;
+            padding: 35px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            text-align: center;
+        }
+
+        /* Logo */
+
+        .logo-container {
+            margin-bottom: 35px;
+        }
+
+        .logo {
+            width: 125px;
+            height: 125px;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto 20px;
+        }
+
+        .church-name {
+            font-size: 13px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            font-weight: 600;
+        }
+
+        /* Línea decorativa */
+
+        .line {
+            width: 70px;
+            height: 1px;
+            background: var(--gold);
+            margin: 28px auto;
+        }
+
+        /* Contenido */
+
+        .label {
+            color: var(--gold-light);
+            font-size: 12px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+            font-weight: 600;
+        }
+
+        h1 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(48px, 9vw, 88px);
+            font-weight: 400;
+            line-height: 1;
+            letter-spacing: -2px;
+            margin-bottom: 25px;
+        }
+
+        h1 span {
+            color: var(--gold-light);
+        }
+
+        .description {
+            max-width: 600px;
+            margin: 0 auto;
+            color: var(--muted);
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        /* Mensaje */
+
+        .message {
+            margin: 42px auto;
+            padding: 28px 35px;
+            max-width: 620px;
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .message p {
+            color: #ddd7da;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 20px;
+            line-height: 1.7;
+        }
+
+        /* Botón */
+
+        .button {
+            display: inline-block;
+            padding: 14px 28px;
+            border: 1px solid var(--gold);
+            color: var(--gold-light);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 11px;
+            font-weight: 600;
+            transition: all 0.25s ease;
+        }
+
+        .button:hover {
+            background: var(--gold);
+            color: #0b0a0b;
+        }
+
+        /* Redes */
+
+        .social {
+            margin-top: 45px;
+        }
+
+        .social p {
+            font-size: 11px;
+            color: #777176;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .social a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 13px;
+            margin: 0 10px;
+            transition: color 0.2s ease;
+        }
+
+        .social a:hover {
+            color: var(--gold-light);
+        }
+
+        /* Footer */
+
+        footer {
+            margin-top: 50px;
+            color: #686267;
+            font-size: 11px;
+            line-height: 1.7;
+        }
+
+        footer strong {
+            color: #8b8589;
+            font-weight: 500;
+        }
+
+        /* Animación */
+
+        .container {
+            animation: appear 0.9s ease forwards;
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+
+        @media (max-width: 600px) {
+
+            .page {
+                padding: 30px 20px;
+            }
+
+            .logo {
+                width: 100px;
+                height: 100px;
+            }
+
+            .church-name {
+                font-size: 10px;
+                letter-spacing: 3px;
+            }
+
+            h1 {
+                font-size: 52px;
+            }
+
+            .description {
+                font-size: 14px;
+            }
+
+            .message {
+                padding: 25px 15px;
+                margin: 35px auto;
+            }
+
+            .message p {
+                font-size: 17px;
+            }
+
+            .social a {
+                display: block;
+                margin: 10px 0;
+            }
+
+            .background::before {
+                width: 350px;
+                height: 350px;
+            }
+
+            .background::after {
+                width: 500px;
+                height: 500px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="background"></div>
+
+    <main class="page">
+
+        <div class="container">
+
+            <!-- LOGO -->
+            <div class="logo-container">
+
+                <!-- Cambia el nombre si tu logo tiene otro archivo -->
+                <img
+                    src="../img/logo.jpg"
+                    alt="Iglesia Amisadai"
+                    class="logo"
+                >
+
+                <div class="church-name">
+                    Iglesia Amisadai
+                </div>
+
+            </div>
+
+
+            <div class="line"></div>
+
+
+            <!-- CONTENIDO PRINCIPAL -->
+
+            <div class="label">
+                Estamos preparando algo nuevo
+            </div>
+
+            <h1>
+                Próxima<span>mente</span>
+            </h1>
+
+            <p class="description">
+                Estamos trabajando en una nueva experiencia para nuestra
+                iglesia. Muy pronto podrás conocer todo lo que hemos
+                preparado para ti.
+            </p>
+
+
+            <!-- MENSAJE -->
+
+            <div class="message">
+
+                <p>
+                    "Todo tiene su tiempo, y todo lo que se quiere
+                    debajo del cielo tiene su hora."
+                </p>
+
+                <div class="line"></div>
+
+                <small>
+                    Eclesiastés 3:1
+                </small>
+
+            </div>
+
+
+            <!-- BOTÓN -->
+
+            <a href="../" class="button">
+                Volver al inicio
+            </a>
+
+
+            <!-- REDES -->
+
+            <div class="social">
+
+                <p>
+                    Síguenos y mantente informado
+                </p>
+
+                <a href="https://www.facebook.com/Ac.Amisadai" target="_blank">
+                    Facebook
+                </a>
+            </div>
+
+
+            <!-- FOOTER -->
+
+            <footer>
+
+                <strong>Iglesia Amisadai</strong><br>
+
+                Buenos Aires 25, Nueva Mina<br>
+                96760 Minatitlán, Veracruz
+
+                <br><br>
+
+                © 2026 Iglesia Amisadai. Todos los derechos reservados.
+
+            </footer>
+
+        </div>
+
+    </main>
+
+</body>
+</html>

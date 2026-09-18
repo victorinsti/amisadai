@@ -1,0 +1,1284 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Montserrat:wght@600;700;800;900&display=swap');
+
+:root{
+  --bg:#0b0a0b;
+  --surface:#141214;
+  --surface2:#1b181b;
+  --text:#f6f3f4;
+  --muted:#b4adb2;
+  --accent:#b78a4a;
+  --accent2:#d6ad6d;
+  --line:rgba(255,255,255,.11);
+  --max:1180px;
+  --radius:18px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+html{scroll-behavior:smooth}
+
+body{
+  font-family:"DM Sans",sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.7;
+  overflow-x:hidden;
+}
+
+a{color:inherit}
+
+.container{
+  width:min(92%,var(--max));
+  margin:auto;
+}
+
+.center{text-align:center}
+
+.text{
+  max-width:720px;
+  margin:0 auto;
+  color:var(--muted);
+}
+
+.section{
+  padding:105px 0;
+  position:relative;
+}
+
+.section-title{
+  font-family:Montserrat,sans-serif;
+  font-size:clamp(2rem,4vw,3.5rem);
+  line-height:1.08;
+  margin-bottom:18px;
+  letter-spacing:-1px;
+}
+
+.eyebrow{
+  color:var(--accent2);
+  text-transform:uppercase;
+  letter-spacing:2.5px;
+  font-weight:700;
+  font-size:.73rem;
+  margin-bottom:13px;
+}
+
+
+/* NAVBAR */
+
+.nav{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:1000;
+  padding:19px 0;
+  background:rgba(11,10,11,.78);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid transparent;
+  transition:.3s;
+}
+
+.nav.scrolled{
+  background:rgba(11,10,11,.97);
+  border-color:var(--line);
+}
+
+.nav-flex{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.logo{
+  font-family:Montserrat,sans-serif;
+  font-weight:900;
+  letter-spacing:2px;
+  font-size:1.1rem;
+}
+
+.logo span{color:var(--accent)}
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:25px;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:#e8e4e6;
+  font-weight:600;
+  font-size:.9rem;
+  position:relative;
+}
+
+.nav-links a:after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-7px;
+  width:0;
+  height:1px;
+  background:var(--accent2);
+  transition:.25s;
+}
+
+.nav-links a:hover:after{width:100%}
+
+.menu-btn{
+  display:none;
+  align-items:center;
+  justify-content:center;
+  min-width:78px;
+  height:40px;
+  padding:0 14px;
+  border:1px solid rgba(214,173,109,.55);
+  border-radius:6px;
+  background:transparent;
+  color:var(--accent2);
+  font-family:"DM Sans",sans-serif;
+  font-size:.72rem;
+  font-weight:700;
+  letter-spacing:1.5px;
+  cursor:pointer;
+  user-select:none;
+  transition:.25s ease;
+}
+
+.menu-btn:hover{
+  background:var(--accent);
+  border-color:var(--accent);
+  color:#fff;
+}
+
+
+
+
+/* HERO GENERAL */
+
+.hero,
+.kids-hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  position:relative;
+  background-position:center;
+  background-size:cover;
+  isolation:isolate;
+}
+
+.hero{
+  background-image:url("img/logo.jpg");
+}
+
+.hero:before,
+.kids-hero:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(8,7,8,.94),
+      rgba(8,7,8,.62),
+      rgba(8,7,8,.74)
+    );
+  z-index:-1;
+}
+
+.hero:after{
+  content:"";
+  position:absolute;
+  inset:auto 0 0;
+  height:35%;
+  background:linear-gradient(transparent,var(--bg));
+  z-index:-1;
+}
+
+.hero-content{
+  max-width:760px;
+  padding-top:80px;
+}
+
+.hero h1,
+.kids-hero h1{
+  font-family:Montserrat,sans-serif;
+  font-size:clamp(3.2rem,8vw,7rem);
+  line-height:.95;
+  letter-spacing:-3px;
+}
+
+.hero p,
+.kids-hero p{
+  font-size:clamp(1.05rem,2vw,1.3rem);
+  color:#d3ced1;
+  margin:22px 0 30px;
+  max-width:650px;
+}
+
+
+/* BOTONES */
+
+.btn-primary,
+.btn-secondary{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:13px 24px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:700;
+  border:1px solid transparent;
+  transition:.25s;
+  cursor:pointer;
+}
+
+.btn-primary{
+  background:var(--accent);
+  color:#fff;
+  box-shadow:0 10px 28px rgba(183,138,74,.18);
+}
+
+.btn-secondary{
+  border-color:rgba(255,255,255,.2);
+  background:transparent;
+  color:#fff;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover{
+  transform:translateY(-2px);
+}
+
+
+/* TARJETAS */
+
+.grid-3{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+  margin-top:40px;
+}
+
+.card,
+.course-card,
+.kids-card{
+  background:linear-gradient(145deg,var(--surface2),var(--surface));
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:30px;
+  box-shadow:0 18px 45px rgba(0,0,0,.18);
+  transition:.3s;
+}
+
+.card:hover,
+.course-card:hover,
+.kids-card:hover{
+  transform:translateY(-5px);
+  border-color:rgba(214,173,109,.34);
+}
+
+.card h3,
+.course-card h3,
+.kids-card h3{
+  font-family:Montserrat,sans-serif;
+  margin-bottom:10px;
+}
+
+.card p,
+.course-card p,
+.kids-card p{
+  color:var(--muted);
+}
+
+.dark-section,
+.kids-dark{
+  background:#111012;
+}
+
+
+/* FOOTER */
+
+footer{
+  background:#070607;
+  border-top:1px solid var(--line);
+  padding:45px 20px;
+  text-align:center;
+  color:#858085;
+}
+
+footer p+p{margin-top:4px}
+
+
+/* FORMULARIOS */
+
+input,
+textarea{
+  width:100%;
+  padding:15px 17px;
+  margin:8px 0 16px;
+  border:1px solid var(--line);
+  border-radius:10px;
+  background:#111012;
+  color:#fff;
+  outline:none;
+}
+
+input:focus,
+textarea:focus{
+  border-color:var(--accent);
+}
+
+iframe{
+  box-shadow:0 18px 50px rgba(0,0,0,.35);
+}
+
+
+/* CURSOS */
+
+.courses-vertical{
+  width:min(92%,900px);
+  margin:40px auto;
+  display:grid;
+  gap:18px;
+}
+
+.course-card{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:25px;
+}
+
+.course-card .btn-primary{flex:none}
+
+.progress-bar{
+  height:10px;
+  background:#29262a;
+  border-radius:999px;
+  overflow:hidden;
+  margin:25px 0 35px;
+}
+
+.progress{
+  height:100%;
+  width:0;
+  background:var(--accent);
+  transition:.45s;
+}
+
+.lesson{
+  cursor:pointer;
+  margin:16px 0;
+}
+
+.lesson span{
+  display:block;
+  margin-top:12px;
+  color:#89848a;
+  font-size:.9rem;
+}
+
+.lesson.done{
+  border-color:#477c5c!important;
+  background:#101c14;
+}
+
+
+/* KIDS */
+
+.kids-hero{
+  background-image:url("img/logokids.jpg");
+}
+
+.kids-section{padding:95px 20px}
+
+.kids-btn{
+  display:inline-flex;
+  background:#b78a4a;
+  color:#fff;
+  padding:13px 24px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:700;
+  margin-top:18px;
+}
+
+.kids-card{
+  background:#fff;
+  color:#111;
+}
+
+.kids-card p{color:#666}
+
+.seguridad-card{
+  background:rgba(255,255,255,.07);
+  color:#fff;
+  backdrop-filter:blur(10px);
+}
+
+.seguridad-card p{color:#bfc2c8}
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+  margin-top:35px;
+}
+
+.gallery img{
+  width:100%;
+  aspect-ratio:1;
+  object-fit:cover;
+  border-radius:12px;
+  transition:.3s;
+}
+
+.gallery img:hover{transform:scale(1.02)}
+
+
+/* =====================================================
+   JÓVENES
+   Identidad sobria: azul petróleo + cobre
+===================================================== */
+
+.ministry-hero{
+  min-height:90vh;
+  display:flex;
+  align-items:center;
+  position:relative;
+  background-size:cover;
+  background-position:center;
+  overflow:hidden;
+  isolation:isolate;
+}
+
+.youth-hero{
+  background:
+    linear-gradient(115deg,#071416,#0b2528 55%,#123238);
+}
+
+.youth-hero:after{
+  content:"";
+  position:absolute;
+  width:520px;
+  height:520px;
+  right:-180px;
+  top:12%;
+  border-radius:50%;
+  background:rgba(72,139,145,.14);
+  filter:blur(80px);
+  z-index:-1;
+}
+
+.ministry-hero:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5,13,14,.96),
+      rgba(5,13,14,.68),
+      rgba(5,13,14,.22)
+    );
+  z-index:-1;
+}
+
+.youth-hero .eyebrow{
+  color:#8fc4c7;
+}
+
+.youth-hero .btn-primary{
+  background:#3e858a;
+  box-shadow:0 10px 28px rgba(62,133,138,.18);
+}
+
+.youth-hero .btn-secondary:hover{
+  border-color:#6caeb2;
+}
+
+.youth-hero .logo-accent{color:#8fc4c7}
+
+
+/* =====================================================
+   MUJERES
+   Identidad elegante: vino + champagne
+===================================================== */
+
+.women-hero{
+  background:
+    linear-gradient(115deg,#190c12,#35131f 55%,#4a1d2b);
+}
+
+.women-hero:after{
+  content:"";
+  position:absolute;
+  width:520px;
+  height:520px;
+  right:-180px;
+  top:12%;
+  border-radius:50%;
+  background:rgba(202,133,146,.15);
+  filter:blur(80px);
+  z-index:-1;
+}
+
+.women-hero .eyebrow{
+  color:#e0b8a0;
+}
+
+.women-hero .btn-primary{
+  background:#9d596c;
+  box-shadow:0 10px 28px rgba(157,89,108,.20);
+}
+
+.women-hero .btn-secondary:hover{
+  border-color:#d19a9e;
+}
+
+
+/* =====================================================
+   IMAGEN PRINCIPAL DE MINISTERIOS
+===================================================== */
+
+.ministry-image-section{
+  padding:65px 0 25px;
+  background:#090809;
+}
+
+.ministry-main-image{
+  position:relative;
+  width:100%;
+  height:540px;
+  overflow:hidden;
+  border-radius:24px;
+  border:1px solid rgba(255,255,255,.10);
+  box-shadow:0 25px 70px rgba(0,0,0,.40);
+}
+
+.ministry-main-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:transform .7s ease;
+}
+
+.ministry-main-image:hover img{
+  transform:scale(1.025);
+}
+
+.ministry-main-image:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(
+      transparent 38%,
+      rgba(0,0,0,.88)
+    );
+}
+
+.image-caption{
+  position:absolute;
+  z-index:2;
+  left:42px;
+  bottom:38px;
+  max-width:700px;
+}
+
+.image-caption span{
+  color:#d6ad6d;
+  font-size:.72rem;
+  font-weight:800;
+  letter-spacing:2.5px;
+}
+
+.image-caption h2{
+  font-family:Montserrat,sans-serif;
+  font-size:clamp(2rem,5vw,4rem);
+  line-height:1;
+  margin-top:10px;
+}
+
+.women-image-section .image-caption span{
+  color:#e0b8a0;
+}
+
+
+/* =====================================================
+   TARJETAS DE MINISTERIOS
+===================================================== */
+
+.ministry-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+  margin-top:50px;
+}
+
+.ministry-card{
+  text-align:left;
+  padding:30px;
+  border-radius:18px;
+  background:#151315;
+  border:1px solid rgba(255,255,255,.09);
+  min-height:220px;
+  transition:.3s;
+}
+
+.ministry-card:hover{
+  transform:translateY(-5px);
+}
+
+.youth-hero ~ .ministry-image-section + .section .ministry-card:hover{
+  border-color:rgba(109,174,178,.40);
+}
+
+.women-hero ~ .ministry-image-section + .section .ministry-card:hover{
+  border-color:rgba(209,154,158,.40);
+}
+
+.ministry-icon{
+  width:50px;
+  height:50px;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#242024;
+  color:#d6ad6d;
+  font-size:1.25rem;
+  margin-bottom:22px;
+}
+
+.ministry-card h3{
+  font-family:Montserrat,sans-serif;
+  margin-bottom:10px;
+}
+
+.ministry-card p{color:var(--muted)}
+
+
+/* =====================================================
+   GALERÍA MINISTERIOS
+===================================================== */
+
+.ministry-gallery{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+  margin-top:45px;
+}
+
+.gallery-item{
+  height:310px;
+  border-radius:18px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.08);
+  background:#151315;
+}
+
+.gallery-item img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:.5s ease;
+}
+
+.gallery-item:hover img{
+  transform:scale(1.04);
+}
+
+
+/* =====================================================
+   SECCIÓN IDENTIDAD
+===================================================== */
+
+.ministry-dark{
+  background:#101012;
+}
+
+.ministry-split{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:65px;
+  align-items:center;
+}
+
+.ministry-left-text{margin-left:0}
+
+.verse-box{
+  margin-top:30px;
+  padding:24px 27px;
+  border-left:2px solid #b78a4a;
+  background:rgba(183,138,74,.06);
+  border-radius:0 14px 14px 0;
+}
+
+.youth-hero ~ * .verse-box{
+  border-left-color:#5d9ca0;
+}
+
+.women-hero ~ * .verse-box{
+  border-left-color:#b46c7e;
+}
+
+.verse-box strong{
+  display:block;
+  font-family:Georgia,serif;
+  font-size:1.12rem;
+  line-height:1.55;
+}
+
+.verse-box span{
+  display:block;
+  color:#d6ad6d;
+  font-size:.78rem;
+  font-weight:700;
+  margin-top:8px;
+}
+
+.ministry-stat-panel{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+}
+
+.ministry-stat-panel div{
+  padding:32px 24px;
+  border:1px solid var(--line);
+  border-radius:18px;
+  background:#171618;
+}
+
+.ministry-stat-panel strong{
+  font:800 2.8rem/1 Montserrat,sans-serif;
+  color:#d6ad6d;
+  display:block;
+}
+
+.ministry-stat-panel span{
+  color:#aaa4a9;
+  display:block;
+  margin-top:9px;
+  font-weight:600;
+}
+
+
+/* =====================================================
+   ACTIVIDADES
+===================================================== */
+
+.activity-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-top:45px;
+}
+
+.activity-grid>div{
+  text-align:left;
+  padding:28px;
+  border-radius:18px;
+  border:1px solid var(--line);
+  background:#151416;
+  transition:.3s;
+}
+
+.activity-grid>div:hover{
+  transform:translateY(-4px);
+}
+
+.activity-grid span{
+  color:#d6ad6d;
+  font-weight:800;
+  letter-spacing:1.5px;
+}
+
+.activity-grid h3{
+  font-family:Montserrat,sans-serif;
+  margin:15px 0 8px;
+}
+
+.activity-grid p{color:var(--muted)}
+
+
+/* =====================================================
+   CTA
+===================================================== */
+
+.ministry-cta{
+  padding:115px 20px;
+  position:relative;
+  overflow:hidden;
+}
+
+.youth-cta{
+  background:
+    linear-gradient(
+      135deg,
+      #081517,
+      #10272a
+    );
+}
+
+.women-cta{
+  background:
+    linear-gradient(
+      135deg,
+      #190b11,
+      #361420
+    );
+}
+
+.ministry-cta h2{
+  font:800 clamp(2.5rem,5vw,4.5rem)/1.05 Montserrat,sans-serif;
+  margin-bottom:18px;
+}
+
+.ministry-cta p{
+  color:#c4bec2;
+  font-size:1.05rem;
+  margin-bottom:28px;
+}
+
+
+/* PANEL MUJERES */
+
+.flower-panel{
+  min-height:360px;
+  border-radius:24px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  background:
+    linear-gradient(
+      145deg,
+      #2c131d,
+      #160b10
+    );
+  border:1px solid rgba(224,184,160,.16);
+}
+
+.flower-circle{
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:5.5rem;
+  color:#d8a49e;
+}
+
+.flower-panel>span{
+  font:800 1.35rem Montserrat,sans-serif;
+  margin-top:10px;
+}
+
+.flower-panel small{
+  color:#a9a0a5;
+  margin-top:5px;
+}
+
+
+/* =====================================================
+   OFRENDAS
+===================================================== */
+
+.offering-hero{
+  min-height:88vh;
+  display:flex;
+  align-items:center;
+  position:relative;
+  background-image:url("img/ofrendas.jpg");
+  background-size:cover;
+  background-position:center;
+  overflow:hidden;
+}
+
+.offering-overlay{
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(8,7,8,.95),
+      rgba(8,7,8,.72),
+      rgba(183,138,74,.12)
+    );
+  z-index:0;
+}
+
+.offering-hero-content{
+  position:relative;
+  z-index:1;
+  max-width:780px;
+}
+
+.offering-hero-content h1{
+  font-family:Montserrat,sans-serif;
+  font-size:clamp(3rem,7vw,6rem);
+  line-height:.95;
+}
+
+.offering-hero-content p{
+  color:#d5d0d3;
+  font-size:1.15rem;
+  margin:25px 0 30px;
+}
+
+.offering-intro{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:center;
+}
+
+.offering-quote{
+  padding:35px;
+  border:1px solid var(--line);
+  background:#151416;
+  border-radius:20px;
+}
+
+.quote-symbol{
+  color:#d6ad6d;
+  font-family:Georgia,serif;
+  font-size:4rem;
+  line-height:.7;
+}
+
+.offering-quote p{
+  font-family:Georgia,serif;
+  font-size:1.35rem;
+  margin:15px 0;
+}
+
+.offering-quote small{color:#d6ad6d}
+
+.bible-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+  margin-top:45px;
+}
+
+.bible-card{
+  padding:30px;
+  background:#151416;
+  border:1px solid var(--line);
+  border-radius:18px;
+}
+
+.bible-number{
+  color:#777178;
+  font-weight:800;
+}
+
+.bible-icon{
+  color:#d6ad6d;
+  font-size:1.2rem;
+  margin:15px 0;
+}
+
+.bible-card h3{
+  font-family:Montserrat,sans-serif;
+  margin-bottom:15px;
+}
+
+.bible-card .verse{
+  color:#d2cdd0;
+  font-family:Georgia,serif;
+  font-size:1rem;
+}
+
+.bible-card>span{
+  display:block;
+  color:#d6ad6d;
+  font-size:.78rem;
+  margin-top:15px;
+  font-weight:700;
+}
+
+.offering-feature{
+  background:#111012;
+}
+
+.offering-feature-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:65px;
+  align-items:center;
+}
+
+.offering-image img{
+  width:100%;
+  height:500px;
+  object-fit:cover;
+  border-radius:22px;
+}
+
+.offering-feature-content p{
+  color:var(--muted);
+  margin:15px 0;
+}
+
+.mini-verse{
+  margin-top:25px;
+  padding:20px;
+  border-left:2px solid #b78a4a;
+  background:rgba(183,138,74,.05);
+}
+
+.mini-verse strong{display:block}
+
+.mini-verse span{
+  display:block;
+  color:#d6ad6d;
+  font-size:.78rem;
+  margin-top:5px;
+}
+
+.generosity-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+  margin-top:45px;
+}
+
+.generosity-item{
+  padding:28px;
+  border:1px solid var(--line);
+  border-radius:18px;
+  background:#151416;
+}
+
+.generosity-item>div{
+  color:#d6ad6d;
+  font-size:1.4rem;
+  margin-bottom:14px;
+}
+
+.generosity-item h3{
+  font-family:Montserrat,sans-serif;
+  margin-bottom:8px;
+}
+
+.generosity-item p{color:var(--muted)}
+
+.offering-quote-section{
+  min-height:500px;
+  display:flex;
+  align-items:center;
+  background-size:cover;
+  background-position:center;
+  position:relative;
+}
+
+.offering-quote-section:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(7,6,7,.72);
+}
+
+.offering-quote-content{
+  position:relative;
+  max-width:850px;
+}
+
+.offering-quote-content blockquote{
+  font-family:Georgia,serif;
+  font-size:clamp(1.7rem,4vw,3rem);
+  line-height:1.35;
+}
+
+.offering-quote-content cite{
+  display:block;
+  color:#d6ad6d;
+  margin-top:18px;
+  font-style:normal;
+  font-weight:700;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:1000px){
+
+  .nav-links{
+  position:fixed;
+  top:0;
+  right:0;
+  bottom:0;
+  width:min(320px,88vw);
+  height:100vh;
+  background:#111012;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:center;
+  padding:40px;
+  gap:22px;
+  transform:translateX(110%);
+  transition:transform .3s ease;
+  box-shadow:-20px 0 60px rgba(0,0,0,.45);
+  z-index:1001;
+}
+
+.nav-links.active{
+  transform:translateX(0);
+}
+
+.nav-links a{
+  font-size:1rem;
+  width:100%;
+  padding:10px 0;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.nav-links a:after{
+  display:none;
+}
+}
+
+@media(max-width:900px){
+
+  .nav-links{
+  position:fixed;
+  top:0;
+  right:0;
+  bottom:0;
+
+  width:min(320px,88vw);
+  height:100vh;
+
+  background:#111012;
+
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:center;
+
+  padding:40px;
+
+  gap:22px;
+
+  transform:translateX(110%);
+
+  transition:transform .3s ease;
+
+  box-shadow:-20px 0 60px rgba(0,0,0,.45);
+
+  z-index:1001;
+}
+
+.nav-links.active{
+  transform:translateX(0);
+}
+
+.nav-links a{
+  font-size:1rem;
+  width:100%;
+  padding:10px 0;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.nav-links a:after{
+  display:none;
+}
+
+  .nav-links.active{transform:translateX(0)}
+
+  .menu-btn{
+  display:flex;
+  z-index:1002;
+  position:relative;
+}
+
+  .grid-3{
+    grid-template-columns:1fr;
+  }
+
+  .course-card{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  .gallery{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .section{
+    padding:80px 0;
+  }
+
+  .ministry-split,
+  .offering-intro,
+  .offering-feature-grid{
+    grid-template-columns:1fr;
+    gap:40px;
+  }
+
+  .ministry-main-image{
+    height:450px;
+  }
+}
+
+@media(max-width:560px){
+
+  .hero-content{
+    padding-top:90px;
+  }
+
+  .hero h1,
+  .kids-hero h1{
+    letter-spacing:-2px;
+  }
+
+  .btn-primary,
+  .btn-secondary{
+    width:100%;
+  }
+
+  .gallery{
+    gap:9px;
+  }
+
+  .ministry-grid,
+  .bible-grid,
+  .generosity-grid{
+    grid-template-columns:1fr;
+  }
+
+  .ministry-gallery{
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+
+  .gallery-item{
+    height:220px;
+    border-radius:14px;
+  }
+
+  .ministry-main-image{
+    height:390px;
+    border-radius:20px;
+  }
+
+  .image-caption{
+    left:25px;
+    right:25px;
+    bottom:25px;
+  }
+
+  .offering-image img{
+    height:360px;
+  }
+}
