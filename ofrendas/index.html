@@ -1,28 +1,64 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ofrendas y Diezmos | Amisadai</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+.offering-hero-content .btn-primary{margin-right:12px}
 
-    <meta charset="UTF-8">
+/* Datos para ofrendar */
+.donate{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.donate .text{margin:0 0 18px;max-width:520px}
+.donate-thanks{color:var(--accent2);font-family:Georgia,serif;font-size:1.15rem}
+.donate-card{
+  background:linear-gradient(145deg,var(--surface2),var(--surface));
+  border:1px solid rgba(214,173,109,.3);
+  border-radius:22px;
+  padding:6px 30px 4px;
+  box-shadow:0 24px 60px rgba(0,0,0,.4);
+}
+.donate-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+  padding:20px 0;
+  border-bottom:1px solid var(--line);
+}
+.donate-row dt{color:var(--accent2);font-size:.82rem;font-weight:700;margin-bottom:3px}
+.donate-row dd{
+  font-family:Montserrat,sans-serif;
+  font-weight:700;
+  font-size:1.05rem;
+  font-variant-numeric:tabular-nums;
+  letter-spacing:.4px;
+  word-break:break-all;
+}
+.copy{
+  flex:none;
+  padding:8px 16px;
+  border:1px solid rgba(214,173,109,.5);
+  border-radius:8px;
+  background:transparent;
+  color:var(--accent2);
+  font:700 .8rem "DM Sans",sans-serif;
+  cursor:pointer;
+  transition:.25s;
+}
+.copy:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+.donate-proof{padding:22px 0 24px;color:var(--muted);font-size:.95rem}
+.donate-proof a{color:var(--accent2);font-weight:700;text-decoration:none;border-bottom:1px solid rgba(214,173,109,.4);white-space:nowrap}
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>Ofrendas y Diezmos | Amisadai</title>
-
-    <link rel="stylesheet" href="../style.css">
-
+@media(max-width:900px){.donate{grid-template-columns:1fr;gap:40px}}
+@media(max-width:560px){
+  .offering-hero-content .btn-primary{margin:0 0 12px}
+  .donate-card{padding:4px 20px}
+}
+</style>
 </head>
-
-
 <body>
-
-
-<!-- =========================
-     NAVBAR
-========================= -->
 
 <header class="nav" id="navbar">
 
@@ -81,536 +117,116 @@
 
 </header>
 
-
-<!-- =========================
-     HERO
-========================= -->
-
-<section
-    class="offering-hero"
->
-
-    <div class="offering-overlay"></div>
-
-
-    <div class="container">
-
-        <div class="offering-hero-content">
-
-            <div class="eyebrow">
-                Generosidad · Fe · Gratitud
-            </div>
-
-
-            <h1>
-                OFRENDAS<br>
-                Y DIEZMOS
-            </h1>
-
-
-            <p>
-                Dar no es solamente entregar algo.
-                Es una expresión de gratitud,
-                obediencia y amor a Dios.
-            </p>
-
-
-            <a
-                href="#biblia"
-                class="btn-primary"
-            >
-                Conocer más 
-            </a>
-
-        </div>
-
-    </div>
-
+<!-- HERO -->
+<section class="offering-hero">
+<div class="offering-overlay"></div>
+<div class="container"><div class="offering-hero-content">
+<div class="eyebrow">Generosidad · Fe · Gratitud</div>
+<h1>OFRENDAS<br>Y DIEZMOS</h1>
+<p>Dar no es solamente entregar algo. Es una expresión de gratitud, obediencia y amor a Dios.</p>
+<a href="#cuenta" class="btn-primary">Cómo ofrendar</a>
+<a href="#biblia" class="btn-secondary">Conocer más</a>
+</div></div>
 </section>
 
-
-
-<!-- =========================
-     INTRO
-========================= -->
-
-<section class="section">
-
-    <div class="container">
-
-        <div class="offering-intro">
-
-            <div>
-
-                <div class="eyebrow">
-                    Una actitud del corazón
-                </div>
-
-                <h2 class="section-title">
-                    Dar con un corazón dispuesto
-                </h2>
-
-                <p class="text offering-text">
-
-                    Las ofrendas y los diezmos forman parte
-                    de una vida de gratitud y reconocimiento
-                    hacia Dios.
-
-                    La Biblia nos enseña que nuestra generosidad
-                    debe nacer de un corazón dispuesto y agradecido.
-
-                </p>
-
-            </div>
-
-
-            <div class="offering-quote">
-
-                <div class="quote-symbol">
-                    “
-                </div>
-
-                <p>
-                    Cada uno dé como propuso
-                    en su corazón: no con tristeza,
-                    ni por necesidad.
-                </p>
-
-                <small>
-                    2 Corintios 9:7
-                </small>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================
-     BIBLIA
-========================= -->
-
-<section
-    class="section"
-    id="biblia"
->
-
-    <div class="container center">
-
-        <div class="eyebrow">
-            La Palabra de Dios
-        </div>
-
-        <h2 class="section-title">
-            Textos bíblicos sobre dar
-        </h2>
-
-        <p class="text">
-            Reflexiona sobre algunos principios
-            que encontramos en las Escrituras
-            acerca de la generosidad.
-        </p>
-
-
-        <div class="bible-grid">
-
-
-            <!-- TEXTO 1 -->
-
-            <article class="bible-card">
-
-                <div class="bible-number">
-                    01
-                </div>
-
-                <div class="bible-icon">
-                    
-                </div>
-
-                <h3>
-                    Diezmos
-                </h3>
-
-                <p class="verse">
-
-                    “Traed todos los diezmos
-                    al alfolí y haya alimento
-                    en mi casa.”
-
-                </p>
-
-                <span>
-                    Malaquías 3:10
-                </span>
-
-            </article>
-
-
-
-            <!-- TEXTO 2 -->
-
-            <article class="bible-card">
-
-                <div class="bible-number">
-                    02
-                </div>
-
-                <div class="bible-icon">
-                    
-                </div>
-
-                <h3>
-                    Generosidad
-                </h3>
-
-                <p class="verse">
-
-                    “Más bienaventurado es dar
-                    que recibir.”
-
-                </p>
-
-                <span>
-                    Hechos 20:35
-                </span>
-
-            </article>
-
-
-
-            <!-- TEXTO 3 -->
-
-            <article class="bible-card">
-
-                <div class="bible-number">
-                    03
-                </div>
-
-                <div class="bible-icon">
-                    
-                </div>
-
-                <h3>
-                    Con alegría
-                </h3>
-
-                <p class="verse">
-
-                    “Dios ama al dador alegre.”
-
-                </p>
-
-                <span>
-                    2 Corintios 9:7
-                </span>
-
-            </article>
-
-
-
-            <!-- TEXTO 4 -->
-
-            <article class="bible-card">
-
-                <div class="bible-number">
-                    04
-                </div>
-
-                <div class="bible-icon">
-                    
-                </div>
-
-                <h3>
-                    Honrar a Dios
-                </h3>
-
-                <p class="verse">
-
-                    “Honra a Jehová con tus bienes,
-                    y con las primicias de todos
-                    tus frutos.”
-
-                </p>
-
-                <span>
-                    Proverbios 3:9
-                </span>
-
-            </article>
-
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================
-     IMAGEN + DIEZMO
-========================= -->
-
-<section class="section offering-feature">
-
-    <div class="container offering-feature-grid">
-
-
-        <div class="offering-image">
-
-            <img
-                src="../img/ofrenda.png"
-                alt="Generosidad y ofrendas"
-            >
-
-        </div>
-
-
-        <div class="offering-feature-content">
-
-            <div class="eyebrow">
-                Diezmo
-            </div>
-
-            <h2 class="section-title">
-                Una práctica de gratitud
-            </h2>
-
-            <p>
-
-                El diezmo aparece en diferentes momentos
-                de la historia bíblica como una forma de
-                reconocer a Dios y apartar una parte
-                de lo recibido.
-
-            </p>
-
-            <p>
-
-                Más allá de una cantidad, la enseñanza
-                bíblica pone atención en la actitud con
-                la que damos.
-
-            </p>
-
-
-            <div class="mini-verse">
-
-                <strong>
-                    “Honra a Jehová con tus bienes...”
-                </strong>
-
-                <span>
-                    Proverbios 3:9
-                </span>
-
-            </div>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================
-     GENEROSIDAD
-========================= -->
-
-<section class="section generosity-section">
-
-    <div class="container center">
-
-        <div class="eyebrow">
-            Generosidad
-        </div>
-
-        <h2 class="section-title">
-            No se trata solamente de dar
-        </h2>
-
-        <p class="text">
-
-            Se trata de reconocer que todo lo que
-            tenemos proviene de Dios y aprender
-            a administrar nuestros recursos
-            con sabiduría, gratitud y amor.
-
-        </p>
-
-
-        <div class="generosity-grid">
-
-
-            <div class="generosity-item">
-
-                <div>
-                    ❤️
-                </div>
-
-                <h3>
-                    Gratitud
-                </h3>
-
-                <p>
-                    Reconocemos las bendiciones
-                    que hemos recibido.
-                </p>
-
-            </div>
-
-
-
-            <div class="generosity-item">
-
-                <div>
-                    
-                </div>
-
-                <h3>
-                    Obediencia
-                </h3>
-
-                <p>
-                    Respondemos a Dios
-                    desde nuestra fe.
-                </p>
-
-            </div>
-
-
-
-            <div class="generosity-item">
-
-                <div>
-                    🤝
-                </div>
-
-                <h3>
-                    Generosidad
-                </h3>
-
-                <p>
-                    Compartimos con otros
-                    lo que hemos recibido.
-                </p>
-
-            </div>
-
-
-
-            <div class="generosity-item">
-
-                <div>
-                    🌱
-                </div>
-
-                <h3>
-                    Mayordomía
-                </h3>
-
-                <p>
-                    Aprendemos a administrar
-                    responsablemente.
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================
-     GRAN CITA
-========================= -->
-
-<section class="offering-quote-section">
-
-    <div class="container center">
-
-        <div class="big-quote">
-            “
-        </div>
-
-        <h2>
-
-            Cada uno dé como propuso
-            en su corazón.
-
-        </h2>
-
-        <p>
-            2 Corintios 9:7
-        </p>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================
-     REFLEXIÓN
-========================= -->
-
-<section class="section">
-
-    <div class="container center">
-
-        <div class="eyebrow">
-            Reflexiona
-        </div>
-
-        <h2 class="section-title">
-            ¿Qué lugar ocupa la generosidad
-            en tu vida?
-        </h2>
-
-        <p class="text">
-
-            Que nuestra manera de dar sea siempre
-            una expresión de amor, gratitud y fe.
-
-        </p>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================
-     FOOTER
-========================= -->
-
-<footer>
-
-    <p>
-        © 2026 Iglesia Amisadai
-    </p>
-
-    <p>
-        Minatitlán, Veracruz
-    </p>
-
-</footer>
-
+<!-- INTRO -->
+<section class="section"><div class="container"><div class="offering-intro">
+<div>
+<div class="eyebrow">Una actitud del corazón</div>
+<h2 class="section-title">Dar con un corazón dispuesto</h2>
+<p class="text offering-text">Las ofrendas y los diezmos forman parte de una vida de gratitud y reconocimiento hacia Dios. La Biblia nos enseña que nuestra generosidad debe nacer de un corazón dispuesto y agradecido.</p>
+</div>
+<div class="offering-quote">
+<div class="quote-symbol">“</div>
+<p>Cada uno dé como propuso en su corazón: no con tristeza, ni por necesidad.</p>
+<small>2 Corintios 9:7</small>
+</div>
+</div></div></section>
+
+<!-- DATOS PARA OFRENDAR -->
+<section class="section dark-section" id="cuenta"><div class="container"><div class="donate">
+<div>
+<div class="eyebrow">Ofrenda de construcción</div>
+<h2 class="section-title">Siembra en la remodelación de tu casa</h2>
+<p class="text">Amada familia, si deseas sembrar en la remodelación de esta casa Amisadai puedes hacerlo en la siguiente cuenta.</p>
+<p class="donate-thanks">Gracias por amar tu casa y dar conforme lo que Dios ponga en tu corazón.</p>
+</div>
+<div class="donate-card">
+<dl>
+<div class="donate-row"><div><dt>A nombre de</dt><dd>Red de Ministerios Amisadi A.R.</dd></div></div>
+<div class="donate-row"><div><dt>Banco</dt><dd>Santander · Cuenta empresarial</dd></div></div>
+<div class="donate-row"><div><dt>Número de cuenta</dt><dd>655113891450</dd></div><button class="copy" type="button" data-copy="655113891450">Copiar</button></div>
+<div class="donate-row"><div><dt>CLABE</dt><dd>014841655113891450</dd></div><button class="copy" type="button" data-copy="014841655113891450">Copiar</button></div>
+<div class="donate-row"><div><dt>Concepto</dt><dd>Ofrenda construcción</dd></div><button class="copy" type="button" data-copy="OFRENDA CONSTRUCCIÓN">Copiar</button></div>
+</dl>
+<p class="donate-proof">Envía tu comprobante a los teléfonos <a href="tel:+529221148615">922 114 8615</a> o <a href="tel:+529221279729">922 127 9729</a>.</p>
+</div>
+</div></div></section>
+
+<!-- BIBLIA -->
+<section class="section" id="biblia"><div class="container center">
+<div class="eyebrow">La Palabra de Dios</div>
+<h2 class="section-title">Textos bíblicos sobre dar</h2>
+<p class="text">Reflexiona sobre algunos principios que encontramos en las Escrituras acerca de la generosidad.</p>
+<div class="bible-grid">
+<article class="bible-card"><div class="bible-number">01</div><div class="bible-icon"></div><h3>Diezmos</h3><p class="verse">“Traed todos los diezmos al alfolí y haya alimento en mi casa.”</p><span>Malaquías 3:10</span></article>
+<article class="bible-card"><div class="bible-number">02</div><div class="bible-icon"></div><h3>Generosidad</h3><p class="verse">“Más bienaventurado es dar que recibir.”</p><span>Hechos 20:35</span></article>
+<article class="bible-card"><div class="bible-number">03</div><div class="bible-icon"></div><h3>Con alegría</h3><p class="verse">“Dios ama al dador alegre.”</p><span>2 Corintios 9:7</span></article>
+<article class="bible-card"><div class="bible-number">04</div><div class="bible-icon"></div><h3>Honrar a Dios</h3><p class="verse">“Honra a Jehová con tus bienes, y con las primicias de todos tus frutos.”</p><span>Proverbios 3:9</span></article>
+</div>
+</div></section>
+
+<!-- IMAGEN + DIEZMO -->
+<section class="section offering-feature"><div class="container offering-feature-grid">
+<div class="offering-image"><img src="../img/ofrenda.png" alt="Generosidad y ofrendas"></div>
+<div class="offering-feature-content">
+<div class="eyebrow">Diezmo</div>
+<h2 class="section-title">Una práctica de gratitud</h2>
+<p>El diezmo aparece en diferentes momentos de la historia bíblica como una forma de reconocer a Dios y apartar una parte de lo recibido.</p>
+<p>Más allá de una cantidad, la enseñanza bíblica pone atención en la actitud con la que damos.</p>
+<div class="mini-verse"><strong>“Honra a Jehová con tus bienes...”</strong><span>Proverbios 3:9</span></div>
+</div>
+</div></section>
+
+<!-- GENEROSIDAD -->
+<section class="section generosity-section"><div class="container center">
+<div class="eyebrow">Generosidad</div>
+<h2 class="section-title">No se trata solamente de dar</h2>
+<p class="text">Se trata de reconocer que todo lo que tenemos proviene de Dios y aprender a administrar nuestros recursos con sabiduría, gratitud y amor.</p>
+<div class="generosity-grid">
+<div class="generosity-item"><div>❤️</div><h3>Gratitud</h3><p>Reconocemos las bendiciones que hemos recibido.</p></div>
+<div class="generosity-item"><div></div><h3>Obediencia</h3><p>Respondemos a Dios desde nuestra fe.</p></div>
+<div class="generosity-item"><div>🤝</div><h3>Generosidad</h3><p>Compartimos con otros lo que hemos recibido.</p></div>
+<div class="generosity-item"><div>🌱</div><h3>Mayordomía</h3><p>Aprendemos a administrar responsablemente.</p></div>
+</div>
+</div></section>
+
+<!-- GRAN CITA -->
+<section class="offering-quote-section"><div class="container center">
+<div class="big-quote">“</div>
+<h2>Cada uno dé como propuso en su corazón.</h2>
+<p>2 Corintios 9:7</p>
+</div></section>
+
+<!-- REFLEXIÓN -->
+<section class="section"><div class="container center">
+<div class="eyebrow">Reflexiona</div>
+<h2 class="section-title">¿Qué lugar ocupa la generosidad en tu vida?</h2>
+<p class="text">Que nuestra manera de dar sea siempre una expresión de amor, gratitud y fe.</p>
+</div></section>
+
+<footer><p>© 2026 Iglesia Amisadai</p><p>Minatitlán, Veracruz</p></footer>
 
 <script src="../script.js"></script>
-
-
+<script>
+document.querySelectorAll('.copy').forEach(function(b){
+  b.addEventListener('click',async function(){
+    var t=b.dataset.copy;
+    try{await navigator.clipboard.writeText(t)}
+    catch(e){var i=document.createElement('textarea');i.value=t;i.style.position='fixed';document.body.appendChild(i);i.select();document.execCommand('copy');i.remove()}
+    var o=b.textContent;b.textContent='Copiado';setTimeout(function(){b.textContent=o},1500);
+  });
+});
+</script>
 </body>
-
 </html>
